@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'components/_nav.html' %}
+
+<main class="container">
+    <h1>Bosh sahifa</h1>
+
+    {% if request.user.is_superuser %}
+        <a href="/users/" class="superuser-link">Barcha foydalanuvchilar</a>
+    {% endif %}
+
+    <br>
+    <a href="">Shaxsiy kabinet</a>
+    <br>
+    <br>
+    <br>
+    <a href="/users/logout/" class="logout-link">Tizimdan chiqish</a>
+
+    {% include 'components/_messages.html' %}
+</main>
+{% endblock content %}

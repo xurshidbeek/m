@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/">Bosh sahifaga qaytish</a>
+{% for user in users %}
+    <div>
+        <h2>Username: {{ user.username }}</h2>
+        <h3>Ismi: {{ user.first_name }}</h3>
+        <h3>Familiyasi: {{ user.last_name }}</h3>
+        <p>E-mail manzil: {{ user.email }}</p>
+        <p>
+            Superuser: {% if user.is_superuser %} ✅ {% else %} ❌ {% endif %}
+        </p>
+    </div>
+    <hr>
+{% endfor %}
+
+{% endblock content %}

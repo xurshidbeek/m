@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="" method="post" class="registration-form">
+    {% csrf_token %}
+    
+    <div class="registration-form-inner">
+        <h2>Tizimga kirish</h2>
+        <hr>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password1" minlength="8" placeholder="Parol" required>
+        <input type="password" name="password2" minlength="8" placeholder="Parolni takrorlang" required>
+        <button type="submit">Tizimda ro'yxatdan o'tish</button>
+
+        <p>
+            Allaqachon akkauntingiz bormi ?
+            Unda <a href="/users/login/">Tizimga kiring</a>
+        </p>
+    </div>
+
+    {% include 'components/_messages.html' %}
+
+</form>
+{% endblock content %}
